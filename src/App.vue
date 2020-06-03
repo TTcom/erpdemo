@@ -3,7 +3,7 @@
     <transition name="activity">
       <welcomePage v-if="iswelcome" />
     </transition>
-    <showNum :text="text" />
+    <showNum :text="text" v-if="iswelcome" />
     <router-view />
   </div>
 </template>
@@ -24,18 +24,21 @@ export default {
   mounted() {
     let num = 5
     this.InterVal = setInterval(() => {
-      num--
-      this.text = num
-      console.log(num)
-      if (num === 0) {
+      console.log(12)
+      if (num === -1) {
         this.iswelcome = false
         clearInterval(this.InterVal)
       }
+      this.text = num
+      num--
     }, 1000)
+  },
+  destroyed() {
+    this.InterVal = null
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .activity-leave-to {
   //过渡的进入开始的状态，离开过渡的结束状态
   opacity: 0;

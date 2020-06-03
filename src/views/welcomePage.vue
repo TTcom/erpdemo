@@ -1,6 +1,6 @@
 <template>
   <div class="welcomePage">
-    <canvas id="canvas" style="background:#111"></canvas>
+    <canvas id="canvas"></canvas>
   </div>
 </template>
 
