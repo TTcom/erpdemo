@@ -39,11 +39,11 @@ module.exports = {
     //           hints: false
     //       },
     output: { // 输出重构  打包编译后的 文件名称  【模块名称.时间戳】
-      filename: `js/[name].${process.env.VUE_APP_CURRENTMODE}.${Timestamp}.js`,
-      chunkFilename: `js/[name].${process.env.VUE_APP_CURRENTMODE}.${Timestamp}.js`
+      filename: `js/[name].${Timestamp}.js`,
+      chunkFilename: `js/[name].${Timestamp}.js`
     },
-    plugins: [
-      new UglifyJsPlugin({
+    optimization: {
+      minimizer: [new UglifyJsPlugin({
         uglifyOptions: {
           output: {
             comments: false // 去掉注释
@@ -53,7 +53,9 @@ module.exports = {
             drop_console: true,
           }
         },
-      }),
+      })],
+    },
+    plugins: [
       // Ignore all locale files of moment.js
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) //忽略 moment 的本地化内容
     ]

@@ -22,6 +22,7 @@ export default {
     }
   },
   mounted() {
+    console.log(21312)
     let num = 5
     this.InterVal = setInterval(() => {
       console.log(12)
