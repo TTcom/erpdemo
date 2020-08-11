@@ -13,13 +13,6 @@ module.exports = {
         pathRewrite: {
           '^/cgi-bin/': '/cgi-bin/'
         }
-      },
-      '/inviteapi/': {
-        target: 'https://h5uttest2.56pingtai.net/',
-        ws: false,
-        pathRewrite: {
-          '^/inviteapi/': '/inviteapi/'
-        }
       }
     }
   },

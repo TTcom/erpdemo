@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     console.log(21312)
-    let num = 5
+    let num = 3
     this.InterVal = setInterval(() => {
       console.log(12)
       if (num === -1) {

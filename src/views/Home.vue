@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    千里寻君，君不在，万里寻君，仍是君
+    略略略~~~~~~~~~~
   </div>
 </template>
 
